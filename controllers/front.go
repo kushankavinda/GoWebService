@@ -6,14 +6,15 @@ import (
 	"net/http"
 )
 
- func RegisterController()  {
-	 uc := newUserController()
+func RegisterController() {
+	uc := newUserController()
 
-	 http.Handle("/users" , *uc)
-	 http.Handle("/users/", *uc)
- }
+	http.Handle("/users", *uc)
+	http.Handle("/users/", *uc)
+	http.Handle("/biometricVerification", *uc)
+}
 
-func encodeResponseAsJSON(data interface{},w io.Writer){
+func encodeResponseAsJSON(data interface{}, w io.Writer) {
 	enc := json.NewEncoder(w)
 	enc.Encode(data)
 }

@@ -1,5 +1,8 @@
 package models
 
+import(
+	"fmt"
+)
 type User struct {
 	ID int
 	FirstName string
@@ -31,5 +34,5 @@ func GetUserByID (id int) (User , error){
 			return *u , nil
 		}
 	}
-	return User {},nil
+	return User {}, fmt.Errorf("No such User");
 }
