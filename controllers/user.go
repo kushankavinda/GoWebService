@@ -2,11 +2,11 @@ package controllers
 
 import (
 	"encoding/json"
+	"github.com/gin-gonic/gin"
+	"github.com/webAPi/models"
 	"net/http"
 	"regexp"
 	"strconv"
-
-	"github.com/webAPi/models"
 )
 
 type userControllers struct {
@@ -83,4 +83,14 @@ func newUserController() *userControllers {
 	return &userControllers{
 		userIDPattern: regexp.MustCompile(`^/users/(\d+)/?`),
 	}
+}
+
+func (c *userControllers) ListAccounts(ctx *gin.Context) {
+	/*	q := ctx.Request.URL.Query().Get("q")
+		accounts, err := model.AccountsAll(q)
+		if err != nil {
+			httputil.NewError(ctx, http.StatusNotFound, err)
+			return
+		}*/
+	ctx.JSON(http.StatusOK, "kushan")
 }

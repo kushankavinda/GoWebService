@@ -6,7 +6,7 @@ import (
 	"github.com/webAPi/controllers"
 )
 
-func main()  {
+func main() {
 	controllers.RegisterController()
-	http.ListenAndServe(":3000",nil)
+	http.ListenAndServe(":3000", nil)
 }
