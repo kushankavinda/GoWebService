@@ -8,6 +8,7 @@ import (
 type Product struct {
 //	ID        uint
  //   CreatedAt time.Time
+ // gorm.Model
 	Code  string
 	Price uint
 }
