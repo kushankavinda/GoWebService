@@ -38,6 +38,3 @@ func TestingDb() {
 	db.Delete(&product)
 	fmt.Print("db operarions done")
 }
-func init() {
-	fmt.Print("labbe banis")
-}

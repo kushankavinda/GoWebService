@@ -4,22 +4,24 @@ import (
 	"encoding/json"
 	"io"
 
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	ginSwagger "github.com/swaggo/gin-swagger"   // gin-swagger middleware"
 	"github.com/swaggo/gin-swagger/swaggerFiles" // swagger embed files
 	"github.com/webAPi/controllers/docs"
 
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/webAPi/database"
 )
 
 func RegisterController() {
-	/*	uc := newUserController()
+	uc := newUserController()
 
-		http.Handle("/users", *uc)
-		http.Handle("/users/", *uc)
-		http.Handle("/biometricVerification", *uc) */
-	database.TestingDb()
+	http.Handle("/users", *uc)
+	http.Handle("/users/", *uc)
+	http.Handle("/biometricVerification", *uc)
+	//	database.TestingDb()
+	//	test()
 }
 
 func encodeResponseAsJSON(data interface{}, w io.Writer) {
